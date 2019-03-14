@@ -1,0 +1,11 @@
+{
+    "users": [
+      { "id": 1, "role": "admin", "username": "vania", "password": "123456", "email": "van@gmail.com" },
+      { "id": 2, "role": "user", "username": "vania123", "password": "123456", "email": "vania@gmail.com" },
+      { "id": 3, "role": "user", "username": "andi123", "password": "123456", "email": "andi@gmail.com" },
+      { "id": 3, "role": "user", "username": "ani123", "password": "123456", "email": "ani@gmail.com" }
+    ],
+    "products": [
+      { "id": 1, "body": "some comment", "postId": 1 }
+    ]
+}

@@ -1,0 +1,14 @@
+.tbox{
+    border: none;
+    border-radius: 50px;
+    height:40px;
+    background-color: rgb(255,20,147,0.2);
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    color: rgb(0,48,143);
+}
+
+.a{
+    border: 1.2px solid #00308F;
+}
