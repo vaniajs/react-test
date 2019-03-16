@@ -1,11 +1,138 @@
 {
-    "users": [
-      { "id": 1, "role": "admin", "username": "vania", "password": "123456", "email": "van@gmail.com" },
-      { "id": 2, "role": "user", "username": "vania123", "password": "123456", "email": "vania@gmail.com" },
-      { "id": 3, "role": "user", "username": "andi123", "password": "123456", "email": "andi@gmail.com" },
-      { "id": 3, "role": "user", "username": "ani123", "password": "123456", "email": "ani@gmail.com" }
-    ],
-    "products": [
-      { "id": 1, "body": "some comment", "postId": 1 }
-    ]
+  "users": [
+    {
+      "id": 1,
+      "role": "admin",
+      "username": "vania",
+      "password": "123456",
+      "email": "van@gmail.com",
+      "mobile": "08787878787"
+    },
+    {
+      "id": 2,
+      "role": "user",
+      "username": "vania123",
+      "password": "123456",
+      "email": "vania@gmail.com",
+      "mobile": "01234567"
+    },
+    {
+      "id": 3,
+      "role": "user",
+      "username": "andi123",
+      "password": "123456",
+      "email": "andi@gmail.com",
+      "mobile": "021876543"
+    },
+    {
+      "id": 3,
+      "role": "user",
+      "username": "ani123",
+      "password": "123456",
+      "email": "ani@gmail.com",
+      "mobile": "08123456"
+    },
+    {
+      "username": "vania",
+      "email": "vania",
+      "mobile": "12345678",
+      "password": "123456",
+      "id": 4
+    },
+    {
+      "username": "tes",
+      "email": "tes",
+      "mobile": "123456",
+      "password": "aaa",
+      "id": 5
+    },
+    {
+      "username": "santosa",
+      "email": "santosa",
+      "mobile": "123456",
+      "password": "0808",
+      "id": 6
+    },
+    {
+      "username": "pewdiepie",
+      "email": "pewdiepie",
+      "mobile": "123",
+      "password": "123",
+      "id": 7
+    },
+    {
+      "username": "yuhuu",
+      "email": "yuhuu",
+      "mobile": "12345",
+      "password": "12",
+      "id": 8
+    },
+    {
+      "username": "asd",
+      "email": "asd",
+      "mobile": "12345",
+      "password": "12",
+      "id": 9
+    },
+    {
+      "username": "yuhu",
+      "email": "yuhu",
+      "mobile": "1208",
+      "password": "11",
+      "id": 10
+    },
+    {
+      "username": "OKE",
+      "email": "OKE",
+      "mobile": "108108",
+      "password": "a",
+      "id": 11
+    }
+  ],
+  "products": [
+    {
+      "id": 100,
+      "nama": "Naked Reloaded Palette",
+      "brand": "Urban Decay",
+      "harga": 800000,
+      "diskon": 10,
+      "desc": "Naked palet yang essential untuk kamu! Dengan menampilkan 12 warna eyeshadow baru yang mendefinisikan netral dengan formula khas Urban Decay. Palet ini dirancang untuk mengkombinasikan warna-warna universal dan dirancang untuk semua orang dari segala usia, jenis kelamin, dan warna kulit. Cara Penggunaan: Gunakan warna favoritmu, pulaskan pada kelopak mata. Kamu bisa menggunakan satu warna atau mengkombinasikan beberapa warna agar tercipta tampilan menawan yang kamu inginkan.",
+      "img": "https://s3-ap-southeast-1.amazonaws.com/img-sociolla/img/p/2/3/8/6/8/23868-large_default.jpg",
+      "qty": 10,
+      "category": "Eye"
+    },
+    {
+      "id": 101,
+      "nama": "All Nighter Setting Spray Ornament",
+      "brand": "Urban Decay",
+      "harga": 220000,
+      "diskon": 5,
+      "desc": "Spray it and slay it! Setting spray yang mampu mempertahankan makeup flawlessmu, dibalut dalam kemasan yang berkilauan bagai permata. Formulanya ringan dan bekerja pada semua jenis kulit, dengan Teknologi Temperature Control menjaga agar makeupmu tidak pudar dan luntur. Setting spray ini bekerja dengan menurunkan temperature makeupmu sehingga menjaga foundation, eyeshadow, blush dan concealer tetap awet di wajahmu, bahkan jika kamu berkeringat.",
+      "img": "https://s3-ap-southeast-1.amazonaws.com/img-sociolla/img/p/2/2/7/7/1/22771-large_default.jpg",
+      "qty": 20,
+      "category": "Face"
+    },
+    {
+      "id": 102,
+      "nama": "Peko Melty Jelly Lip Balm",
+      "brand" : "Holika Holika",
+      "harga": 120000,
+      "diskon": 0,
+      "desc": "Lip Balm tekstur jeli kenyal dengan aroma strawberi segar memberikan sensasi lembab dan segar. Komposisi warna lip balm yang dapat dipilih sesuai mood Anda. Mengandung pelembab alami yang menjaga bibir tetap lembab sepanjang hari. Kandungan: Lip Balm bening: Highly moisturizing oil [olive, avocado, sweet almond oil] Warna lip balm Strawberry: ekstrak strawberry, peach, cranberry",
+      "img": "https://s3-ap-southeast-1.amazonaws.com/img-sociolla/img/p/2/4/3/4/8/24348-large_default.jpg",
+      "qty": 30,
+      "category": "Lip"
+    },
+    {
+      "id": 103,
+      "nama": "Peko Hard Cover Cushion Puff",
+      "brand": "Holika Holika",
+      "harga": 118000,
+      "diskon": 20,
+      "desc": "Puff Cushion yang sangat elastis, padat dan memiliki ketahanan yang sangat baik (tidak mudah robek) Cara Penggunaan : Aplikasikan puff pada produk cushion dan aplikasikan pada wajah dengan cara menepuk.",
+      "img": "https://s3-ap-southeast-1.amazonaws.com/img-sociolla/img/p/2/4/3/4/0/24340-large_default.jpg",
+      "qty": 30,
+      "category": "Face"
+    }
+  ]
 }
