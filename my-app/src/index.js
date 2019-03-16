@@ -1,15 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './index.css';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { createStore , applyMiddleware } from 'redux';
 import ReduxThunk from 'redux-thunk';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
 import Reducers from './2.reducers';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './index.css';
+import './support/fontawesome-free/css/fontawesome.min.css'
+import './support/fontawesome-free/css/all.min.css';
+import App from './App';
+import * as serviceWorker from './serviceWorker';
 
 const globalState = createStore(Reducers,{},applyMiddleware(ReduxThunk))
 ReactDOM.render(<Provider store={globalState}><BrowserRouter><App /></BrowserRouter></Provider>, document.getElementById('root'));

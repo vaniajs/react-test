@@ -1,6 +1,6 @@
-.header{
+/* .header{
     background-color: #00308F;
-}
+} */
 
 .bt-link{
     text-decoration: none;
@@ -8,5 +8,5 @@
 }
 
 .bt-link:hover{
-    color: deeppink;
+    color:#E16868;
 }

@@ -1,20 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import {resetUser} from '../1.actions/userActions';
+import Cookie from 'universal-cookie';
 import '../support/cssheader.css';
-import {
-  Collapse,
-  Navbar,
-  NavbarToggler,
-  NavbarBrand,
-  Nav,
-  NavItem,
-  NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem } from 'reactstrap';
+import {Collapse,Navbar,NavbarToggler,NavbarBrand,Nav,NavItem,NavLink,UncontrolledDropdow,DropdownToggle,DropdownMenu,DropdownItem} from 'reactstrap';
 
-
+const objCookie = new Cookie()
 class Header extends React.Component {
   constructor(props) {
     super(props);
@@ -30,24 +22,55 @@ class Header extends React.Component {
     });
   }
 
+  btnLogout = () => {
+    objCookie.remove('userData')
+    this.props.resetUser()
+  }
 
   render() {
-      const styling = {fontFamily:'sans-serif', color:"white", fontWeight:"bold"}
-      // const styling = {fontFamily:"Abril Fatface", color:"white", fontWeight:"bold", letterSpacing:"3px"}
+    const styling = { fontFamily: 'Montserrat', color: "#5C5C5C" , fontSize:'14px'}
+    // const styling = {fontFamily:"Abril Fatface", color:"white", fontWeight:"bold", letterSpacing:"3px"}
     return (
-      <div style={{ marginBottom:"50px" }}>
-        <Navbar fixed="top" expand="md" style={{backgroundColor:"#00308F", width:"100%"}}>
-          <NavbarBrand href="/" style={styling}>LOGO</NavbarBrand>
+      <div style={{ marginBottom: "50px" }}>
+        <Navbar fixed="top" expand="md" style={{ backgroundColor: "#FFF9F9", width: "100%" }}>
+          <NavbarBrand href="/" style={styling}><img src='http://s3-ap-southeast-1.amazonaws.com/glints-id-dashboard/job-banner-pic/242365aaf4655ba28403433fff1c44fb.png' width='100px'/> </NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
-            <Nav className="ml-auto" navbar>
-              <NavItem className='bt-link'>
-                <Link to='/login'className='bt-link'><NavLink className='bt-link' style={styling} className='bt-link'><i className="fas fa-sign-in-alt"/>Login</NavLink></Link>
+            {/* <NavItem className='bt-link'>
+                <Link to='/register' className='bt-link'><NavLink className='bt-link' style={styling}><i className="fas fa-user-plus" /> Register</NavLink></Link>
+              </NavItem> */}
+
+            {this.props.username !== '' ?
+                <Nav className="ml-auto" navbar>
+                  <NavItem className='bt-link'>
+                    <NavLink className='bt-link' style={styling} className='bt-link'>Welcome, <b>{this.props.username}</b></NavLink>
+                  </NavItem>
+
+                  {this.props.role === 'admin'?
+                  <NavItem className='bt-link'>
+                  <Link to='/manage-product' className='bt-link'><NavLink className='bt-link' style={styling} className='bt-link'><i className="fas fa-sliders-h"/> Manage Products</NavLink></Link>
+                </NavItem>
+                :<NavItem className='bt-link'>
+                  
+                <Link to='/login' className='bt-link'><NavLink className='bt-link' style={styling} className='bt-link'><i className="fas fa-shopping-cart"/> 0 </NavLink></Link>
               </NavItem>
-              <NavItem className='bt-link'>
-                <Link to='/register'className='bt-link'><NavLink className='bt-link' style={styling}><i className="fas fa-user-plus" />Register</NavLink></Link>
-              </NavItem>
-              {/* <UncontrolledDropdown nav inNavbar>
+              }
+                  
+                  <NavItem className='bt-link'>
+                    <Link to='/' className='bt-link'><NavLink onClick={this.btnLogout} className='bt-link' style={styling} className='bt-link'><i className="fas fa-sign-in-alt"/> LOGOUT</NavLink></Link>
+                  </NavItem></Nav>
+              : 
+                <Nav className="ml-auto float-right" navbar>
+                  <NavItem className='bt-link'>
+                    <Link to='/register' className='bt-link'><NavLink className='bt-link' style={styling}><i className="fas fa-user-plus" /> REGISTER</NavLink></Link>
+                  </NavItem>
+                  <NavItem className='bt-link'>
+                    <Link to='/login' className='bt-link'><NavLink className='bt-link' style={styling} className='bt-link'><i className="fas fa-sign-in-alt" /> LOGIN</NavLink></Link>
+                  </NavItem></Nav>
+
+            }
+
+            {/* <UncontrolledDropdown nav inNavbar>
                 <DropdownToggle nav caret>
                   Options
                 </DropdownToggle>
@@ -64,12 +87,19 @@ class Header extends React.Component {
                   </DropdownItem>
                 </DropdownMenu>
               </UncontrolledDropdown> */}
-            </Nav>
+            {/* //</Nav> */}
           </Collapse>
         </Navbar>
-     </div>
+      </div>
     );
   }
 }
 
-export default Header;
+const mapStateToProps = (state) => {
+  return {
+    username: state.user.username,
+    role: state.user.role
+  }
+}
+
+export default connect(mapStateToProps,{resetUser})(Header);
